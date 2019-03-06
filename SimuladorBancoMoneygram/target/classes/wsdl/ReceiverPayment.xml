@@ -1,0 +1,76 @@
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:tem="http://tempuri.org/">
+	<soapenv:Header />
+	<soapenv:Body>
+		<tem:BillPaymentRq>
+			<NS2:BillPaymentRequest
+				xmlns:NS2="http://tempuri.org/">
+				<NS2:PrimaryAcctNumber>4381080000000008</NS2:PrimaryAcctNumber>
+				<NS2:TxCode>45109M</NS2:TxCode>
+				<NS2:Amount>28600</NS2:Amount>
+				<NS2:TransactionTime>20180321171812</NS2:TransactionTime>
+				<NS2:AcquirerAuditNumber>171812</NS2:AcquirerAuditNumber>
+				<NS2:TellerCode>0001</NS2:TellerCode>
+				<NS2:PosEntryMode>101</NS2:PosEntryMode>
+				<NS2:Channel>149</NS2:Channel>
+				<NS2:BillCompanyCode>2282</NS2:BillCompanyCode>
+				<NS2:ReceivingInstitutionIdCode>10000002206
+				</NS2:ReceivingInstitutionIdCode>
+				<NS2:RetrievalReferenceNumber>8000155</NS2:RetrievalReferenceNumber>
+				<NS2:TerminalNumber>00070560</NS2:TerminalNumber>
+				<NS2:CardAcceptorNameLoc>ACQUIRER NAME Ecuador EC
+				</NS2:CardAcceptorNameLoc>
+				<NS2:TransferID>865373</NS2:TransferID>
+				<NS2:OrderNumber>853902</NS2:OrderNumber>
+				<NS2:CurrencyCode>840</NS2:CurrencyCode>
+				<NS2:CuentaCliente>0000000000</NS2:CuentaCliente>
+				<NS2:CuentaComercio>0000000000</NS2:CuentaComercio>
+				<NS2:BillReference>PACO000025</NS2:BillReference>
+				<NS2:ClientID>123465</NS2:ClientID>
+				<NS2:AcquirerInstitutionID>0206</NS2:AcquirerInstitutionID>
+				<NS2:BillServiceCode>1</NS2:BillServiceCode>
+				<NS2:RoutingData>! Q300011 SRC_RTE_UPP</NS2:RoutingData>
+				<NS2:InputData>! Q000010 0000000000</NS2:InputData>
+				<NS2:BeneIDType>CEDULA</NS2:BeneIDType>
+				<NS2:BeneIDNumber>0600272934</NS2:BeneIDNumber>
+				<NS2:BeneIDIssuedBy>ECUADOR</NS2:BeneIDIssuedBy>
+				<NS2:BeneIDIssuedByCountry>EC</NS2:BeneIDIssuedByCountry>
+				<NS2:BeneIDIssuedByState>EC</NS2:BeneIDIssuedByState>
+				<NS2:BeneIDIssueDate />
+				<NS2:BeneIDExpirationDate />
+				<NS2:CorrespLocID>0197</NS2:CorrespLocID>
+				<NS2:CorrespLocName />
+				<NS2:CorrespLocAddress />
+				<NS2:CorrespLocCity />
+				<NS2:CorrespLocState />
+				<NS2:CorrespLocPostalCode />
+				<NS2:CorrespLocCountry />
+				soapenv
+				<NS2:BeneTelNo />
+				<NS2:BeneAddress />
+				<NS2:BeneCity />
+				<NS2:BeneCounty />
+				<NS2:BeneState />
+				<NS2:BenePostalCode />
+				<NS2:BeneCountry />
+				<NS2:BeneNationality />
+				<NS2:BeneCountryOfResidence />
+				<NS2:BeneDateOfBirth />
+				<NS2:BeneCountryOfBirth />
+				<NS2:BeneStateOfBirth />
+				<NS2:BeneCityOfBirth />
+				<NS2:BeneOccupation />
+				<NS2:BeneGender />
+				<NS2:BeneTaxID />
+				<NS2:BeneCustRelationship />
+				<NS2:BeneDistrict />
+				<NS2:BeneIdentityCode />
+				<NS2:BeneCURPNumber />
+				<NS2:TransferReason />
+				<NS2:OnBehalfOf />
+			</NS2:BillPaymentRequest>
+		</tem:BillPaymentRq>
+	</soapenv:Body>
+</soapenv:Envelope>
+

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Simulador Banco - Moneygram
+Implementation-Version: 1.0
+Built-By: whuera
+Implementation-Vendor-Id: com.banred.simulador
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/SimuladorBancoMoneygram
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: BANRED
+

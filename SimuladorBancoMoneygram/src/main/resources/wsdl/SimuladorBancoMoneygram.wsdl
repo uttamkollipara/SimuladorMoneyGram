@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions
+        xmlns:s="http://www.w3.org/2001/XMLSchema"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+        xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+        xmlns:tns="http://tempuri.org/"
+        xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+        xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+        xmlns:ns3="http://schemas.xmlsoap.org/wsdl/"
+        targetNamespace="http://tempuri.org/"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:documentation
+            xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS Banco - Moneygram
+    </wsdl:documentation>
+    <wsdl:types>
+        <s:schema elementFormDefault="qualified"
+                  targetNamespace="http://tempuri.org/">
+
+            <s:element name="SendPayment">
+                <s:complexType>
+                    <s:sequence>
+                        <!--generales  -->
+                        <xs:element name="PrimaryAcctNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="TxCode" nillable="true" type="xs:string"/>
+                        <xs:element name="Amount" nillable="true" type="xs:string"/>
+                        <xs:element name="TransactionTime" nillable="true" type="xs:string"/>
+                        <xs:element name="AcquirerAuditNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="Channel" nillable="true" type="xs:string"/>
+                        <xs:element name="BillCompanyCode" nillable="true" type="xs:string"/>
+                        <xs:element name="TerminalNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="CurrencyCode" nillable="true" type="xs:string"/>
+                        <xs:element name="BillServiceCode" nillable="true" type="xs:string"/>
+                        <xs:element name="AcquirerInstitutionID" nillable="true" type="xs:string"/>
+                        <xs:element name="BranchId" nillable="true" type="xs:string"/>
+                        <xs:element name="InputData" nillable="true" type="xs:string"/>
+
+                        <!--feelockup  -->
+                        <xs:element name="ReceiveCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="ReceiveCurrency" nillable="true" type="xs:string"/>
+                        <xs:element name="SendCurrency" nillable="true" type="xs:string"/>
+                        <xs:element name="DestinationCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderFirstName" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderLastName" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderAddress" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderCity" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="ReceiverFirstName" nillable="true" type="xs:string"/>
+                        <xs:element name="ReceiverLastName" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderIDNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderIDType" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderIDCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderDayOfBirth" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderHomePhone" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderHomePhoneCountryCode" nillable="true" type="xs:string"/>
+                        <xs:element name="SenderCitizenshipCountry" nillable="true" type="xs:string"/>
+                        <xs:element name="SendPurposeOfTransaction" nillable="true" type="xs:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+
+            <xsd:element name="SendPaymentResponse">
+                <xs:complexType>
+                    <xs:sequence>
+
+                        <xsd:element minOccurs="0" maxOccurs="1"
+                                     name="SendPaymentResult"
+                                     type="tns:SendPaymentResult">
+                        </xsd:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xsd:element>
+
+            <xsd:complexType name="SendPaymentResult">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="ResultCode" type="xs:int"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="AdditionalData" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="Commissions" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="BillerCutoverDate" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ValidReceiveCurrency" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ValidExchangeRate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="EstimatedReceiveAmount" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="EstimatedReceiveCurrency" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="EstimatedExchangeRate" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ReceiveCountry" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="TotalSendFees" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="SwitchAuditNumber" nillable="true" type="xs:string"/>
+
+                </xs:sequence>
+            </xsd:complexType>
+
+           <s:element name="CommitPayment">
+                <s:complexType>
+                    <s:sequence>
+                        <!--generales  -->
+                        <xs:element name="PrimaryAcctNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="TxCode" nillable="true" type="xs:string"/>
+                        <xs:element name="Amount" nillable="true" type="xs:string"/>
+                        <xs:element name="TransactionTime" nillable="true" type="xs:string"/>
+                        <xs:element name="AcquirerAuditNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="Channel" nillable="true" type="xs:string"/>
+                        <xs:element name="BillCompanyCode" nillable="true" type="xs:string"/>
+                        <xs:element name="TerminalNumber" nillable="true" type="xs:string"/>
+                        <xs:element name="CurrencyCode" nillable="true" type="xs:string"/>
+                        <xs:element name="BillServiceCode" nillable="true" type="xs:string"/>
+                        <xs:element name="AcquirerInstitutionID" nillable="true" type="xs:string"/>
+                        <xs:element name="BranchId" nillable="true" type="xs:string"/>
+                        <xs:element name="InputData" nillable="true" type="xs:string"/>
+
+                        <!--commitTransaction  -->
+                        <xs:element name="ValidReceiveAmount" nillable="true" type="xs:string"/>
+                        <xs:element name="TotalSendFees" nillable="true" type="xs:string"/>
+                        <xs:element name="SwitchAuditNumber" nillable="true" type="xs:string"/>
+                        
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            
+             <xsd:element name="CommitPaymentResponse">
+                <xs:complexType>
+                    <xs:sequence>
+
+                        <xsd:element minOccurs="0" maxOccurs="1"
+                                     name="CommitPaymentResult"
+                                     type="tns:CommitPaymentResult">
+                        </xsd:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xsd:element>
+            
+           
+           
+            <xsd:complexType name="CommitPaymentResult">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="ResultCode" type="xs:int"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="Amount" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="AdditionalData" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="Commissions" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="BillerCutoverDate" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="Journal" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="Journal" nillable="true" type="xs:short"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="UniqueSequence" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ExpectedDateOfDelivery" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="ReferenceNumber" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="SwitchAuditNumber" nillable="true"
+                                type="xs:string"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="StatusPayment" nillable="true"
+                                type="xs:string"/>
+                    
+                </xs:sequence>
+            </xsd:complexType>
+           
+           
+           
+
+        </s:schema>
+    </wsdl:types>
+
+
+    <wsdl:message name="SendPayment_InputMessage">
+        <wsdl:part
+                name="parameters" element="tns:SendPayment"/>
+    </wsdl:message>
+
+    <wsdl:message name="SendPayment_OutputMessage">
+        <wsdl:part
+                name="parameters" element="tns:SendPaymentResponse"/>
+    </wsdl:message>
+    
+    <wsdl:message name="CommitPayment_InputMessage">
+        <wsdl:part
+                name="parameters" element="tns:CommitPayment"/>
+    </wsdl:message>
+
+    <wsdl:message name="CommitPayment_OutputMessage">
+        <wsdl:part
+                name="parameters" element="tns:CommitPaymentResponse"/>
+    </wsdl:message>
+
+
+    <wsdl:portType name="GenericWSRemesasAcqBanredSoap">
+
+
+        <wsdl:operation name="SendPayment">
+            <wsdl:documentation>operation "SendPayment"</wsdl:documentation>
+            <wsdl:input message="tns:SendPayment_InputMessage"/>
+            <wsdl:output message="tns:SendPayment_OutputMessage"/>
+        </wsdl:operation>
+        
+         <wsdl:operation name="CommitPayment">
+            <wsdl:documentation>operation "SendPayment"</wsdl:documentation>
+            <wsdl:input message="tns:CommitPayment_InputMessage"/>
+            <wsdl:output message="tns:CommitPayment_OutputMessage"/>
+        </wsdl:operation>
+
+
+    </wsdl:portType>
+    <wsdl:binding name="GenericWSRemesasAcqBanredSoap"
+                  type="tns:GenericWSRemesasAcqBanredSoap">
+        <soap:binding
+                transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="SendPayment">
+            <wsdl:documentation>operation "SendPayment"</wsdl:documentation>
+            <soap:operation soapAction="http://tempuri.org/SendPayment"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>      
+        
+        <wsdl:operation name="CommitPayment">
+            <wsdl:documentation>operation "SendPayment"</wsdl:documentation>
+            <soap:operation soapAction="http://tempuri.org/CommitPayment"
+                            style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="GenericWSRemesasAcqBanred">
+        <wsdl:documentation
+                xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS Banco - MoneyGram
+        </wsdl:documentation>
+        <wsdl:port name="GenericWSRemesasAcqBanredSoap"
+                   binding="tns:GenericWSRemesasAcqBanredSoap">
+            <soap:address
+                    location="http://localhost:8443/PrediosBT/SimuladorBancoMoneygram.wsdl"/>
+        </wsdl:port>
+        <!-- <wsdl:port name="GenericWSRemesasAcqBanredSoap12" binding="tns:GenericWSRemesasAcqBanredSoap12"><soap12:address location="http://192.168.33.15:12809" /></wsdl:port> -->
+    </wsdl:service>
+</wsdl:definitions>
